@@ -27,15 +27,7 @@
       return true; //da o resultado positivo//
     }
     
-    function checkPrime() { //define a função que será chamada quando o botão verificar for clicado//
-      const numberInput = document.getElementById("number"); //cria uma referência ao ID "number"//
-      const numberToCheck = parseInt(numberInput.value); //o valor numérico dado pelo usuário é referenciado como 'numberInput'. O 'parseInt' converte esse valor em um número inteiro para ser utilizado em operações.//
-      const result = document.getElementById("result");//cria uma referência ao ID "resultado". e é o local onde a função 'checkPrime()' exibirá o resultado se o número for primo ou não.//
-      
-      if (isPrime(numberToCheck)) { //chama a função passando o número dado, para verificar se um número é primo ou não.//
-        result.textContent = numberToCheck + " é um número primo."; //mostra se o resultado é positivo//
-      } else {
-        result.textContent = numberToCheck + " não é um número primo."; //mostra se o resultado é negativo//
+   
       }
     }
   </script>
