@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Números Primos</title>
+</head>
+<body>
+  <h1>Primos</h1>
+  <br>
+  Digite um número:
+    <label>  </label>
+  <input type="number" id="number"> <!-- cria um espaço para os numeros e confima associando com o result -->
+  <button onclick="checkPrime()">Verificar</button> <!--botão de verificar-->
+  <p id="result"></p> <!-- result associado ao id confirmando o numero -->
+  <script> 
+    function isPrime(num) { //é responsável por verificar se o número dado é primo ou não.//
+      if (num <= 1) {//verifica se o numero é menor ou igual a 1//
+        return false;
+      }
+      
+      for (let n = 2; n <= Math.sqrt(num); n++) {  //'n' variavel para teste; e "n <= Math.sqrt(num);" é uma condição que determina se o valor é menor ou igual a raiz quadrada do numero dado facilitando a busca de divisores//
+        if (num % n === 0) { // teste se 'num' é divisível por algum número.//
+          return false; //da o resultado negativo//
+        }
+      }
+      return true; //da o resultado positivo//
+    }
+    
+    function checkPrime() { //define a função que será chamada quando o botão verificar for clicado//
+      const numberInput = document.getElementById("number"); //cria uma referência ao ID "number"//
+      const numberToCheck = parseInt(numberInput.value); //o valor numérico dado pelo usuário é referenciado como 'numberInput'. O 'parseInt' converte esse valor em um número inteiro para ser utilizado em operações.//
+      const result = document.getElementById("result");//cria uma referência ao ID "resultado". e é o local onde a função 'checkPrime()' exibirá o resultado se o número for primo ou não.//
+      
+      if (isPrime(numberToCheck)) { //chama a função passando o número dado, para verificar se um número é primo ou não.//
+        result.textContent = numberToCheck + " é um número primo."; //mostra se o resultado é positivo//
+      } else {
+        result.textContent = numberToCheck + " não é um número primo."; //mostra se o resultado é negativo//
+      }
+    }
+  </script>
+</body>
+</html>
